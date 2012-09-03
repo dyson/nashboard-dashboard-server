@@ -1,0 +1,21 @@
+{
+  "name": "nashboard-dashboard-server",
+  "version": "0.0.1",
+  "author": {
+    "name": "Dyson Simmons",
+    "email": "<dyson@burnet.edu.au>"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dyson/nashboard-dashboard-server.git"
+  },
+  "private": true,
+  "scripts": {
+    "start": "node app"
+  },
+  "dependencies": {
+    "express": "3.0.0rc3",
+    "ejs": "*",
+    "nashboard-server": "0.0.1"
+  }
+}

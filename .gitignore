@@ -1,0 +1,5 @@
+.DS_Store
+config/nashboard/development.json
+node_modules
+npm-debug.log
+

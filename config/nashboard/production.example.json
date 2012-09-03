@@ -1,0 +1,14 @@
+{
+  "ssl": {
+    "key": "/usr/local/etc/nginx/ssl/dev.key",
+    "certificate": "/usr/local/etc/nginx/ssl/dev.cert"
+  },
+  "whitelist": {
+    "clients": {
+      "localhost": "5884c174b0f273a5c367953d9a6faf4f"
+    },
+    "dashboards": {
+      "dashboard": "d241e110f40d1def4dc5bc33120b7bb1"
+    }
+  }
+}
