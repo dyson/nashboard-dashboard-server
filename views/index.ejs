@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link rel="stylesheet" href="/stylesheets/twitter-bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="/stylesheets/twitter-bootstrap/bootstrap-responsive.min.css">
+  <link rel="stylesheet" href="/stylesheets/application.css">
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    var socket = io.connect('https://<%= host %>:<%= port %>',
+        {
+          secure: true,
+          query: 'dashboard=<%= dashboard %>&token=<%= token %>'
+        });
+  </script>
+  <script src="/javascript/jquery/jquery-1.7.2.min.js"></script>
+  <script src="/javascript/twitter-bootstrap/bootstrap.min.js"></script>
+  <script src="/javascript/application.js"></script>
+
+  <noscript>
+    <style type="text/css">
+      div.container, div.navbar { display: none; }
+      div.noscript { display: block; }
+      div.hero-unit { margin-top: 4em !important;  }
+    </style>
+  </noscript>
+</head>
+<body>
+  <noscript>
+    <div class="container noscript">
+      <div class="row">
+        <div class="span10 offset1">
+          <div class="hero-unit">
+            <h1>Oh no!</h1>
+            <h2>You need to change your web browser settings.</h2>
+            <p>Burnet Web Applications require a feature called JavaScript, which is supported by all modern web browsers.</p>
+            <p>For more information, please refer to:<br><a href="http://www.google.com/support/bin/answer.py?answer=23852">How do I enable JavaScript?</a></p>
+            <p>If you use ad-blocking software, you may be required to allow JavaScript from &lsquo;*.burnet.edu.au&rsquo;.</p>
+            <p>Once JavaScript has been enabled you can try loading this page</a> again.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </noscript>
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <span class="brand">Nashboard</span>
+      </div>
+    </div>
+  </div>
+  <div id="cpu" class="container">
+      <h1>CPU</h2>
+      <div class="row">
+        <div class="hero-unit span2">
+          <h1><span id="cpu_user">0</span>%</h1>
+          <p>USER</p>
+        </div>
+        <div class="hero-unit span2">
+          <h1><span id="cpu_system">0</span>%</h1>
+          <p>SYSTEM</p>
+        </div>
+        <div class="hero-unit span2">
+          <h1><span id="cpu_idle">0</span>%</h1>
+          <p>IDLE</p>
+        </div>
+      </div>
+  </div>
+  <div id="load_average" class="container">
+      <h1>Load Average</h2>
+      <div class="row">
+        <div class="hero-unit span2">
+          <h1><span id="load_average_1m">0</span></h1>
+          <p>1 MINUTE</p>
+        </div>
+        <div class="hero-unit span2">
+          <h1><span id="load_average_5m">0</span></h1>
+          <p>5 MINUTES</p>
+        </div>
+        <div class="hero-unit span2">
+          <h1><span id="load_average_15m">0</span></h1>
+          <p>15  MINUTES</p>
+        </div>
+      </div>
+  </div>
+</body>
+</html>
